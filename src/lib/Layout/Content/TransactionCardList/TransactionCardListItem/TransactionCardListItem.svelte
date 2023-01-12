@@ -1,12 +1,23 @@
 <script>
     import { Card, CardBody } from 'sveltestrap';
+    import {Types} from "../../../../../Stores/budgetStore.js";
+    export let transactionInfo;
+
+    let border;
+    if (transactionInfo.type === Types.INCOME) {
+        border = 'mb-3 border border-primary border-4';
+    } else if(transactionInfo.type === Types.EXPENSE) {
+        border = 'mb-3 border border-danger border-4';
+    } else {
+        border = 'mb-3 border border-warning border-4'
+    }
 </script>
 
-<Card color="light" inverse class="mb-3">
+<Card color="light" inverse class={border}>
     <CardBody class="text-center p-5">
-        <div class="text-danger fw-bolder money">Salary</div>
-        <div class="text-danger fw-bolder">5000</div>
-        <div class="text-white fw-bolder date">16/12/2023</div>
+        <div class="text-danger fw-bolder money">{transactionInfo.name}</div>
+        <div class="text-danger fw-bolder">{transactionInfo.amount}</div>
+        <div class="text-white fw-bolder date">{transactionInfo.date.toLocaleDateString()}</div>
         <div class="text-white delete">X</div>
     </CardBody>
 </Card>
