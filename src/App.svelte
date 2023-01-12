@@ -2,6 +2,7 @@
     import Header from "./lib/Layout/Header/Header.svelte";
     import Sidebar from "./lib/Layout/Sidebar/Sidebar.svelte";
     import TransactionHeader from "./lib/Layout/Content/TransactionHeader/TransactionHeader.svelte";
+    import TransactionCardList from "./lib/Layout/Content/TransactionCardList/TransactionCardList.svelte";
 </script>
 
 <Header/>
@@ -11,6 +12,7 @@
         <div class="flex-grow-1 pt-3" aria-describedby="Content">
             <TransactionHeader/>
             <div aria-describedby="Transaction Card List">
+                <TransactionCardList />
             </div>
 
             <div aria-describedby="Transaction Table View">
