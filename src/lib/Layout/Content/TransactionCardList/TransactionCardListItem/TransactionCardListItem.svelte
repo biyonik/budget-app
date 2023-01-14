@@ -17,7 +17,7 @@
     <CardBody class="text-center p-5">
         <div class="text-danger fw-bolder money">{transactionInfo.name}</div>
         <div class="text-danger fw-bolder">{transactionInfo.amount}</div>
-        <div class="text-white fw-bolder date">{transactionInfo.date.toLocaleDateString()}</div>
+        <div class="text-white fw-bolder date">{transactionInfo.date}</div>
         <div class="text-white delete">X</div>
     </CardBody>
 </Card>
